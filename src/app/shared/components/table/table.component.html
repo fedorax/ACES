@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table id="mytable" class="table table-bordred table-striped">
+                    <thead>
+                        <th *ngIf="showCheckbox">
+                            <input type="checkbox" ng-model="model.checkall" ng-change="model.changeCheck(model.checkall)" />
+                        </th>
+                        <th *ngFor="let item of itemHeader" class="text-center">
+                            <!-- <a ng-click="model.sortType=" personId "; model.sortReverse=!model.sortReverse"> -->
+                            {{item}}
+                            <!-- <span ng-show="model.sortType == "personId" && !model.sortReverse" class="fa fa-caret-down"></span> -->
+                            <!-- <span ng-show="model.sortType == "personId" && model.sortReverse" class="fa fa-caret-up"></span> -->
+                            <!-- </a> -->
+                        </th>
+                        <th *ngIf="showEdit" class="text-center">Edit</th>
+                        <th *ngIf="showDelete" class="text-center">Delete</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of itemBody; let i = index;">
+                            <td *ngIf="showCheckbox">
+                                <input type="checkbox" ng-model="data.checked" />
+                            </td>
+                            <td *ngFor="let item of data">{{item}}</td>
+
+                            <td *ngIf="showEdit" class="text-center">
+                                <p data-placement="top" data-toggle="tooltip" title="Edit">
+                                    <button class="btn btn-primary btn-xs" ng-click="model.edit(data);">
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </button>
+                                </p>
+                            </td>
+                            <td *ngIf="showDelete" class="text-center">
+                                <p data-placement="top" data-toggle="tooltip" title="Delete">
+                                    <button class="btn btn-danger btn-xs" ng-click="model.delete(data);">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                        </button>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

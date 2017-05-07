@@ -1,0 +1,13 @@
+<h1>
+    home works!
+</h1>
+<p>
+    Token: {{token}}
+</p>
+
+<button (click)="onClick('')">Confirm Modal </button>
+<button (click)="onClick('info')">Confirm Modal (info) </button>
+<button (click)="onClick('warn')">Confirm Modal (warn) </button>
+<button (click)="onClick('error')">Confirm Modal (error) </button>
+<button (click)="onClick('success')">Confirm Modal (success) </button>
+<app-confirm-modal (onSubmit)="hideProfile($event)"></app-confirm-modal>
