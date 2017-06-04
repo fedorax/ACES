@@ -1,0 +1,20 @@
+<nav class="navbar navbar-default navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand">Angular2 CLI Express Starter</a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <a routerLink="/home">Home</a>
+            </li>
+            <li><a *ngIf="authToken.isAuthenticated()" routerLink="/feature">Feature</a></li>
+            <li><a *ngIf="authToken.isAuthenticated()" routerLink="/user">User</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a *ngIf="!authToken.isAuthenticated()" routerLink="/login">Login</a></li>
+            <li><a *ngIf="!authToken.isAuthenticated()" routerLink="/signup">Signup</a></li>
+            <li><a *ngIf="authToken.isAuthenticated()" routerLink="/logout">Logout</a></li>
+        </ul>
+    </div>
+</nav>

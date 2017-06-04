@@ -1,0 +1,56 @@
+<div class="container">
+    <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Sign Up</div>
+            </div>
+            <div class="panel-body">
+                <form id="signupform" class="form-horizontal" role="form">
+
+                    <div id="signupalert" class="alert alert-danger" *ngIf="errorMessage">
+                        <p>Error:</p>
+                        <span>{{errorMessage}}</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="personId" class="col-md-3 control-label">UserID</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="personId" placeholder="UserID" [(ngModel)]="model.userId">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstname" class="col-md-3 control-label">First Name</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="firstName" placeholder="First Name" [(ngModel)]="model.firstName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname" class="col-md-3 control-label">Last Name</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="lastName" placeholder="Last Name" [(ngModel)]="model.lastName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-md-3 control-label">Email</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="email" placeholder="Email Address" [(ngModel)]="model.email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-md-3 control-label">Password</label>
+                        <div class="col-md-9">
+                            <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="model.password">
+                        </div>
+                    </div>
+                    <div style="margin-top:10px" class="form-group text-center">
+                        <!-- Button -->
+                        <div class="col-sm-12 controls">
+                            <button type="button" class="btn btn-success" [disabled]="!model.userId || !model.firstName || !model.lastName || !model.email || !model.password" (click)="onSubmit()">Signup</button>
+                            <button type="button" class="btn btn-danger">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
