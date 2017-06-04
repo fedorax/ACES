@@ -1,11 +1,11 @@
 {
     "project": {
         "version": "1.0.0-beta.28.3",
-        "name": "Angular2-SampleApp"
+        "name": "Angular2-CLI-Express-Starter"
     },
     "apps": [{
-        "root": "src",
-        "outDir": "dist",
+        "root": "client",
+        "outDir": "dist/client",
         "assets": [
             "assets",
             "favicon.ico"
@@ -25,16 +25,15 @@
             "../node_modules/jquery/dist/jquery.min.js",
             "../node_modules/bootstrap/dist/js/bootstrap.min.js"
         ],
+        "addons": [
+            "../node_modules/font-awesome/fonts/*.+(otf|eot|svg|ttf|woff|woff2)"
+        ],
+        "environmentSource": "environments/environment.ts",
         "environments": {
-            "source": "src/app/configs/enviroments/enviroment.ts",
-            "local": "src/app/configs/environments/environment.local.ts",
-            "dev": "src/app/configs/environments/environment.dev.ts",
-            "prod": "src/app/configs/environments/environment.prod.ts"
+            "dev": "environments/environment.ts",
+            "prod": "environments/environment.prod.ts"
         }
     }],
-    "addons": [
-        "../node_modules/font-awesome/fonts/*.+(otf|eot|svg|ttf|woff|woff2)"
-    ],
     "e2e": {
         "protractor": {
             "config": "./protractor.conf.js"
@@ -56,18 +55,6 @@
     },
     "defaults": {
         "styleExt": "css",
-        "prefixInterfaces": false,
-        "inline": {
-            "style": false,
-            "template": false
-        },
-        "spec": {
-            "class": false,
-            "component": true,
-            "directive": true,
-            "module": false,
-            "pipe": true,
-            "service": true
-        }
+        "component": {}
     }
 }
