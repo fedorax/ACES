@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { Ng2BootstrapModule } from 'ng2-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { environment } from './configs/enviroments/enviroment';
@@ -31,9 +31,9 @@ import { HeaderComponent } from './components/header/';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
-    HttpModule,
-    Ng2BootstrapModule.forRoot(),
+    HttpClientModule,
 
     // Import Modules
     HomeModule,

@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthToken } from './../../services/auth/auth.token';
-import { ModalDirective } from 'ng2-bootstrap/ng2-bootstrap';
 import { ConfirmModalComponent } from 'app/shared/modals/confirm-modal/confirm-modal.component';
 import { TableComponent } from 'app/shared/components/table/table.component';
 
@@ -25,10 +24,10 @@ export class HomeComponent implements OnInit {
     this.token = this.authToken.getToken();
     this.tableheader = ['No', 'Name', 'Type', 'Description'];
     this.data = [
-        ['A', 'SampleA', 'TypeA', 'DescA'],
-        ['B', 'SampleB', 'TypeB', 'DescB'],
-        ['C', 'SampleC', 'TypeC', 'DescC'],
-      ];
+      ['A', 'SampleA', 'TypeA', 'DescA'],
+      ['B', 'SampleB', 'TypeB', 'DescB'],
+      ['C', 'SampleC', 'TypeC', 'DescC'],
+    ];
   }
   onClick(type) {
     if (type === 'error') {
