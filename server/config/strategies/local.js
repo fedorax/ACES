@@ -15,7 +15,6 @@ module.exports = function() {
         function(username, password, done) {
             // Use the 'User' model 'findOne' method to find a user with the current username
             console.log(username);
-            console.log(password);
             User.findOne({
                 userId: username
             }, (err, user) => {
